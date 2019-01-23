@@ -76,11 +76,40 @@ th, td {
     text-align: center;
     height: 4em;
     width: 4em;
+    position: relative;
 
 }
 
 .firstCell{
     background-color: #58585A;
+}
+.left::before, .down::before, .right::before, .up::before {
+    font-size: 0.7em;
+    color: #849769 ;
+    text-shadow: 0 0 4px #072605;
+    position: absolute;
+    z-index: 1;
+}
+.left::before{
+    content: "━━";
+    top: 40%;
+    left: -12%;
+}
+.down::before{
+    content: "┃";
+    top: 90%;
+    left : 45%;
+}
+.right::before{
+
+    content: "━━";
+    top: 40%;
+    left: 91%;
+}
+.up::before{
+    content: "┃";
+    top: -12%;
+    left : 45%;
 }
 
 
