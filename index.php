@@ -2,6 +2,58 @@
 
 function createMatrix($x,$y)
 {
+    $matrix=[[]];
+    $value = 1;
+    $firstColumn = 0;
+    $firstRow = 0;
+    $lastColumn = $y - 1;
+    $lastRow = $x - 1;
+
+    while ($value <= $x * $y){
+        for($i = $lastColumn; $i >= $firstColumn; $i--){
+            $matrix[$lastRow][$i] = $value++;
+            if($value > $x * $y){
+                break 2;
+            }
+
+        }
+        for($i = $lastRow-1; $i >= $firstRow; $i--){
+            $matrix[$i][$firstColumn] = $value++;
+            if($value > $x * $y){
+                break 2;
+            }
+
+
+        }
+        for($i = $firstColumn+1; $i <= $lastColumn; $i++){
+            $matrix[$firstRow][$i] = $value++;
+            if($value > $x * $y){
+                break 2;
+            }
+
+
+        }
+        for($i = $firstRow + 1; $i < $lastRow; $i++){
+            $matrix[$i][$lastColumn] = $value++;
+            if($value > $x * $y){
+                break 2;
+            }
+
+
+        }
+        $lastRow--;
+        $lastColumn--;
+        $firstRow++;
+        $firstColumn++;
+
+
+    }
+    for ($i = 0; $i < $x; $i++) {
+    for ($j = 0; $j < $y; $j++) {
+        echo $matrix[$i][$j];
+    }
+        echo "<br/>";
+}
 
 }
 
@@ -30,11 +82,10 @@ function createMatrix($x,$y)
 
 </form>
 
-<p><?php
-    print_r($_POST['firstNum']);
-    echo "<br/>";
-    print_r($_POST['secondNum']);
+<?php
+
+    createMatrix($_POST['firstNum'], $_POST['secondNum'])
     ?>
-</p>
+
 </body>
 </html>
