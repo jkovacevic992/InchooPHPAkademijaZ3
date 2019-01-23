@@ -1,34 +1,40 @@
-body{
+body {
     background-color: #3F3F41;
 }
-p{
+
+p {
     color: #FFFFFF;
     font-family: sans-serif;
 }
-p.redovi{
+
+p.redovi {
     margin-top: 0;
 }
-h3{
+
+h3 {
     margin-top: 30px;
     transform: rotate(-90deg);
 
     color: #58585A;
     font-family: sans-serif;
 }
-input{
+
+input {
     border-radius: 10px;
     color: #FFFFFF;
     text-align: center;
     font-size: large;
 }
-input[type=text]{
+
+input[type=text] {
     background-color: #535355;
     width: 12em;
     height: 3em;
 
 
 }
-input[type=submit]{
+
+input[type=submit] {
     background-color: #7AB139;
     width: 20em;
     height: 60px;
@@ -36,7 +42,8 @@ input[type=submit]{
     font-weight: bold;
     border: 0;
 }
-.input{
+
+.input {
     padding-left: 2.5em;
     display: inline-block;
     vertical-align: top;
@@ -44,31 +51,34 @@ input[type=submit]{
 
 }
 
-.output{
+.output {
     padding-left: 2.5em;
     display: inline-block;
     padding-top: 2em;
 
 }
-.inputWord{
+
+.inputWord {
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 1.5em;
+
+}
+
+.outputWord {
     display: inline-block;
     vertical-align: top;
     padding-top: 2em;
-
-}
-.outputWord{
-    display: inline-block;
-    vertical-align: top;
-    padding-top: 2em;
 }
 
-table{
+table {
 
 
     border-spacing: 0;
     font-weight: bold;
 
 }
+
 th, td {
     border: 1px solid #FFFFFF;
     color: #FFFFFF;
@@ -80,36 +90,63 @@ th, td {
 
 }
 
-.firstCell{
+.firstCell {
     background-color: #58585A;
+
+
 }
-.left::before, .down::before, .right::before, .up::before {
+
+.secondCell:after {
     font-size: 0.7em;
-    color: #849769 ;
-    text-shadow: 0 0 4px #072605;
+    color: #8D9B77;
+    position: absolute;
+    content: "━━";
+    top: 40%;
+    left: 90%;
+
+}
+
+.secondCell:before {
+    content: "-";
+    position: absolute;
+    color: #8D9B77;
+    font-size: 1.4em;
+    right: 90%;
+    top: 29%;
+    font-weight: lighter;
+
+}
+
+.left:after, .down:after, .right:after, .up:after {
+    font-size: 0.7em;
+    color: #8D9B77;
     position: absolute;
     z-index: 1;
 }
-.left::before{
+
+.left:after {
     content: "━━";
     top: 40%;
-    left: -12%;
+    left: -11%;
 }
-.down::before{
+
+.down:after {
     content: "┃";
     top: 90%;
-    left : 45%;
+    left: 45%;
 }
-.right::before{
+
+.right:after {
 
     content: "━━";
     top: 40%;
-    left: 91%;
+    left: 90%;
 }
-.up::before{
+
+.up:after {
     content: "┃";
     top: -12%;
-    left : 45%;
+    left: 45%;
 }
 
 

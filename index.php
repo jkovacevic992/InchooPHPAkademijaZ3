@@ -12,36 +12,35 @@ function createMatrix($x, $y, &$matrix, &$cssClass)
     while ($value <= $x * $y) {
         for ($i = $firstColumn; $i <= $lastColumn; $i++) {
             $matrix[$firstRow][$i] = $value++;
-            $class[$firstRow][$i] = $i === $lastColumn ? 'down' : 'right';
+            $cssClass[$firstRow][$i] = $i === $lastColumn ? 'down' : 'right';
             if ($value > $x * $y) {
                 break 2;
             }
 
 
-
         }
 
 
-        for ($i = $firstRow+1; $i <= $lastRow; $i++) {
+        for ($i = $firstRow + 1; $i <= $lastRow; $i++) {
             $matrix[$i][$lastColumn] = $value++;
-            $class[$i][$lastColumn] = $i === $lastRow ? 'left' : 'down';
+            $cssClass[$i][$lastColumn] = $i === $lastRow ? 'left' : 'down';
             if ($value > $x * $y) {
                 break 2;
             }
 
         }
 
-        for ($i = $lastColumn-1; $i >= $firstColumn; $i--) {
+        for ($i = $lastColumn - 1; $i >= $firstColumn; $i--) {
             $matrix[$lastRow][$i] = $value++;
-            $class[$lastRow][$i] = $i === $firstColumn ? 'up' : 'left';
+            $cssClass[$lastRow][$i] = $i === $firstColumn ? 'up' : 'left';
             if ($value > $x * $y) {
                 break 2;
             }
         }
 
-        for ($i = $lastRow-1; $i > $firstRow; $i--) {
+        for ($i = $lastRow - 1; $i > $firstRow; $i--) {
             $matrix[$i][$firstColumn] = $value++;
-            $class[$i][$firstColumn] = $i === $firstRow+1 ? 'right ': 'up';
+            $cssClass[$i][$firstColumn] = $i === $firstRow + 1 ? 'right ' : 'up';
             if ($value > $x * $y) {
                 break 2;
             }
@@ -52,17 +51,22 @@ function createMatrix($x, $y, &$matrix, &$cssClass)
         $lastRow--;
 
 
-
-
-
     }
-    $lastNum = $x*$y;
+    $lastNum = $x * $y;
     echo '<table>';
-    for($i=0;$i<$x;$i++){
+    for ($i = 0; $i < $x; $i++) {
         echo '<tr>';
-        for($j=0;$j<$y;$j++){
+        for ($j = 0; $j < $y; $j++) {
             $n = $matrix[$i][$j];
-            echo '<td class=',($n === $lastNum ? '' : $cssClass[$i][$j] ),'>';
+            if ($n === $matrix[0][0]) {
+                echo "<td class=firstCell>";
+
+            } elseif ($n === $matrix[0][1]) {
+                echo "<td class=secondCell>";
+            } else {
+                echo '<td class=', ($n === $lastNum ? 'lastNum' : $cssClass[$i][$j]), '>';
+            }
+
             echo $n;
             echo '</td>';
         }
@@ -86,39 +90,34 @@ function createMatrix($x, $y, &$matrix, &$cssClass)
     <h3>INPUT</h3>
 </div>
 
-    <div class="input">
+<div class="input">
 
 
-        <form method="post">
-            <p class="redovi">Broj redaka</p>
-            <label>
-                <input name="firstNum" type="text">
-            </label><br/>
-            <p>Broj stupaca</p>
-            <label>
-                <input name="secondNum" type="text">
-            </label><br/>
-            <input type="submit" value="KREIRAJ TABLICU">
+    <form method="post">
+        <p class="redovi">Broj redaka</p>
+        <label>
+            <input name="firstNum" type="text">
+        </label><br/>
+        <p>Broj stupaca</p>
+        <label>
+            <input name="secondNum" type="text">
+        </label><br/>
+        <input type="submit" value="KREIRAJ TABLICU">
 
-        </form>
+    </form>
 
 
-    </div>
+</div>
 <div class="outputWord"><h3>OUTPUT</h3></div>
-    <div class="output">
+<div class="output">
 
 
+    <?php
+    createMatrix($_POST['firstNum'], $_POST['secondNum'], $matrix, $class);
 
 
-
-        <?php
-        createMatrix($_POST['firstNum'], $_POST['secondNum'], $matrix, $class);
-
-
-
-        ?>
-    </div>
-
+    ?>
+</div>
 
 
 </body>
