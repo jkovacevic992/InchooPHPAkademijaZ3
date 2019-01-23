@@ -26,7 +26,7 @@ function createMatrix($x,$y)
     <label>
         <input name="secondNum" type="text">
     </label><br/>
-    <input type="submit" value="Kreiraj tablicu">
+    <input type="submit" value="KREIRAJ TABLICU">
 
 </form>
 
