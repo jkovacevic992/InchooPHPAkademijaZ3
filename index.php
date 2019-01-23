@@ -43,25 +43,24 @@ function createMatrix($x, $y)
 
 
     }
-
-    ksort($matrix);
-    foreach ($matrix as &$value) {
+   foreach ($matrix as &$value) {
         ksort($value);
     }
 
-    function print_row(&$item)
-    {
+    echo "<table>";
+    foreach ($matrix as $row) {
         echo('<tr>');
-        echo('<td>');
-        echo(implode('</td><td>', $item));
-        echo('</td>');
+        foreach ($row as $cell) {
+            if ($cell === 1) {
+                echo('<td class="firstCell">' . $cell . '</td>');
+            } else {
+                echo('<td>' . $cell . '</td>');
+            }
+
+        }
         echo('</tr>');
     }
-
-    echo "<table>";
-    array_walk($matrix, 'print_row');
     echo "</table>";
-
 }
 
 ?>
@@ -75,25 +74,39 @@ function createMatrix($x, $y)
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="form">
-<form method="post">
-    <p>Broj redaka</p>
-    <label>
-        <input name="firstNum" type="text">
-    </label><br/>
-    <p>Broj stupaca</p>
-    <label>
-        <input name="secondNum" type="text">
-    </label><br/>
-    <input type="submit" value="KREIRAJ TABLICU">
+<div class="page">
+    <div class="input">
+        <h3>INPUT</h3>
+    </div>
+    <div class="form">
 
-</form>
-<div class="table">
-    <?php
-    createMatrix($_POST['firstNum'], $_POST['secondNum'])
-    ?>
+        <form method="post">
+            <p class="redovi">Broj redaka</p>
+            <label>
+                <input name="firstNum" type="text">
+            </label><br/>
+            <p>Broj stupaca</p>
+            <label>
+                <input name="secondNum" type="text">
+            </label><br/>
+            <input type="submit" value="KREIRAJ TABLICU">
+
+        </form>
+
+
+    </div>
+    <div class="output">
+        <h3>OUTPUT</h3>
+    </div>
+
+    <div class="table">
+
+        <?php
+        createMatrix($_POST['firstNum'], $_POST['secondNum'])
+        ?>
+    </div>
 </div>
-</div>
+
 
 </body>
 </html>

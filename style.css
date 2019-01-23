@@ -3,10 +3,17 @@ body{
 }
 p{
     color: #FFFFFF;
-    margin-top: 20px;
+    font-family: sans-serif;
 }
-form{
-    float: left;
+p.redovi{
+    margin-top: 0;
+}
+h3{
+    margin-top: 30px;
+    transform: rotate(-90deg);
+    margin-right: 0;
+    color: #58585A;
+    font-family: sans-serif;
 }
 input{
     border-radius: 10px;
@@ -27,6 +34,7 @@ input[type=submit]{
     height: 60px;
     margin-top: 40px;
     font-weight: bold;
+    border: 0;
 }
 table{
 
@@ -37,15 +45,21 @@ table{
 th, td {
     border: 1px solid #FFFFFF;
     color: #FFFFFF;
-    border-radius: 0.5em;
+    border-radius: 0.3em;
     text-align: center;
-    height: 3em;
-    width: 3em;
+    height: 4em;
+    width: 4em;
+
 }
-div.form{
-    width: 70em;
+div{
+    margin-top: 20px;
+    float: left;
 }
-div.table{
-    float: right;
-    width: 40em;
+.firstCell{
+    background-color: #58585A;
 }
+
+
+
+
+
