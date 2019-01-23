@@ -11,7 +11,7 @@ p.redovi{
 h3{
     margin-top: 30px;
     transform: rotate(-90deg);
-    margin-right: 0;
+
     color: #58585A;
     font-family: sans-serif;
 }
@@ -24,7 +24,7 @@ input{
 input[type=text]{
     background-color: #535355;
     width: 12em;
-    height: 40px;
+    height: 3em;
 
 
 }
@@ -36,9 +36,35 @@ input[type=submit]{
     font-weight: bold;
     border: 0;
 }
+.input{
+    padding-left: 2.5em;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 2em;
+
+}
+
+.output{
+    padding-left: 2.5em;
+    display: inline-block;
+    padding-top: 2em;
+
+}
+.inputWord{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 2em;
+    
+}
+.outputWord{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 2em;
+}
+
 table{
 
-    padding-right:5em;
+
     border-spacing: 0;
     font-weight: bold;
 
@@ -51,42 +77,14 @@ th, td {
     height: 4em;
     width: 4em;
 
-
-
-
-
 }
-td{
-    padding: 0;
 
-}
-div{
-    margin-top: 20px;
-    float: left;
-}
-div.input{
-    margin-top: 10px;
-}
 .firstCell{
     background-color: #58585A;
 }
-td.firstCell:before, td.firstCell:after{
-    content: "";
-}
-td:before {
-    content: "-";
-    color: #7AB139;
-    float: left;
 
 
 
-}
-td:after{
-    content: "-";
-    color: #7AB139;
-    float:right;
-
-}
 
 
 
