@@ -75,7 +75,7 @@ function createMatrix($x, $y)
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<div class="form">
 <form method="post">
     <p>Broj redaka</p>
     <label>
@@ -88,10 +88,12 @@ function createMatrix($x, $y)
     <input type="submit" value="KREIRAJ TABLICU">
 
 </form>
-
-<?php
-createMatrix($_POST['firstNum'], $_POST['secondNum'])
-?>
+<div class="table">
+    <?php
+    createMatrix($_POST['firstNum'], $_POST['secondNum'])
+    ?>
+</div>
+</div>
 
 </body>
 </html>

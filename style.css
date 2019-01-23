@@ -1,0 +1,51 @@
+body{
+    background-color: #3F3F41;
+}
+p{
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+form{
+    float: left;
+}
+input{
+    border-radius: 10px;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: large;
+}
+input[type=text]{
+    background-color: #535355;
+    width: 12em;
+    height: 40px;
+
+
+}
+input[type=submit]{
+    background-color: #7AB139;
+    width: 20em;
+    height: 60px;
+    margin-top: 40px;
+    font-weight: bold;
+}
+table{
+
+    padding-right:5em;
+    border-spacing: 0;
+    font-weight: bold;
+}
+th, td {
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    border-radius: 0.5em;
+    text-align: center;
+    height: 3em;
+    width: 3em;
+}
+div.form{
+    width: 70em;
+}
+div.table{
+    float: right;
+    width: 40em;
+}
