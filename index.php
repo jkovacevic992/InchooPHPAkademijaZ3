@@ -1,8 +1,8 @@
 <?php
 
-function createMatrix($x, $y)
+function createMatrix($x, $y, &$matrix)
 {
-    $matrix = [[]];
+
     $value = 1;
     $firstColumn = 0;
     $firstRow = 0;
@@ -74,11 +74,12 @@ function createMatrix($x, $y)
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="page">
+<div class="inputWord">
+    <h3>INPUT</h3>
+</div>
+
     <div class="input">
-        <h3>INPUT</h3>
-    </div>
-    <div class="form">
+
 
         <form method="post">
             <p class="redovi">Broj redaka</p>
@@ -95,17 +96,18 @@ function createMatrix($x, $y)
 
 
     </div>
+<div class="outputWord"><h3>OUTPUT</h3></div>
     <div class="output">
-        <h3>OUTPUT</h3>
-    </div>
 
-    <div class="table">
+
+
+
 
         <?php
-        createMatrix($_POST['firstNum'], $_POST['secondNum'])
+        createMatrix($_POST['firstNum'], $_POST['secondNum'], $matrix);
         ?>
     </div>
-</div>
+
 
 
 </body>
