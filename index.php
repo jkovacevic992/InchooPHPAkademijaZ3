@@ -1,45 +1,41 @@
 <?php
 
-function createMatrix($x,$y)
+function createMatrix($x, $y)
 {
-    $matrix=[[]];
+    $matrix = [[]];
     $value = 1;
     $firstColumn = 0;
     $firstRow = 0;
-    $lastColumn = $y - 1;
-    $lastRow = $x - 1;
+    $lastColumn = $y-1;
+    $lastRow = $x-1;
 
-    while ($value <= $x * $y){
-        for($i = $lastColumn; $i >= $firstColumn; $i--){
-            $matrix[$lastRow][$i] = $value++;
-            if($value > $x * $y){
-                break 2;
-            }
-
-        }
-        for($i = $lastRow-1; $i >= $firstRow; $i--){
-            $matrix[$i][$firstColumn] = $value++;
-            if($value > $x * $y){
-                break 2;
-            }
-
-
-        }
-        for($i = $firstColumn+1; $i <= $lastColumn; $i++){
+    while ($value <= $x * $y) {
+        for ($i = $firstColumn; $i <= $lastColumn; $i++) {
             $matrix[$firstRow][$i] = $value++;
-            if($value > $x * $y){
+            if ($value > $x * $y) {
                 break 2;
             }
+
 
 
         }
-        for($i = $firstRow + 1; $i < $lastRow; $i++){
+        for ($i =$firstRow+1; $i<= $lastRow; $i++){
             $matrix[$i][$lastColumn] = $value++;
-            if($value > $x * $y){
+            if ($value > $x * $y) {
                 break 2;
             }
-
-
+        }
+        for ($i = $lastColumn-1; $i >= $firstColumn; $i--){
+            $matrix[$lastRow][$i] = $value++;
+            if ($value > $x * $y) {
+                break 2;
+            }
+        }
+        for ($i = $lastRow-1; $i > $firstRow; $i--){
+            $matrix[$i][$firstColumn] = $value++;
+            if ($value > $x * $y) {
+                break 2;
+            }
         }
         $lastRow--;
         $lastColumn--;
@@ -49,11 +45,11 @@ function createMatrix($x,$y)
 
     }
     for ($i = 0; $i < $x; $i++) {
-    for ($j = 0; $j < $y; $j++) {
-        echo $matrix[$i][$j];
-    }
+        for ($j = 0; $j < $y; $j++) {
+            echo $matrix[$i][$j];
+        }
         echo "<br/>";
-}
+    }
 
 }
 
@@ -84,8 +80,8 @@ function createMatrix($x,$y)
 
 <?php
 
-    createMatrix($_POST['firstNum'], $_POST['secondNum'])
-    ?>
+createMatrix($_POST['firstNum'], $_POST['secondNum'])
+?>
 
 </body>
 </html>
