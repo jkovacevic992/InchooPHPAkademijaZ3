@@ -44,12 +44,19 @@ function createMatrix($x, $y)
 
 
     }
-    for ($i = 0; $i < $x; $i++) {
-        for ($j = 0; $j < $y; $j++) {
-            echo $matrix[$i][$j];
-        }
-        echo "<br/>";
+//    for ($i = 0; $i < $x; $i++) {
+//        for ($j = 0; $j < $y; $j++) {
+//            echo $matrix[$i][$j];
+//        }
+//        echo "<br/>";
+//    }
+    ksort($matrix);
+    foreach($matrix as &$value) {
+        ksort($value);
     }
+    var_dump($matrix);
+
+
 
 }
 
