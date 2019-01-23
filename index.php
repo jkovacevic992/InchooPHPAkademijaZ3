@@ -1,23 +1,32 @@
+<?php
+
+function createMatrix($x,$y)
+{
+
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Homework 3</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-</body>
-</html>
-
 <form method="post">
+    <p>Broj redaka</p>
     <label>
         <input name="firstNum" type="text">
     </label><br/>
+    <p>Broj stupaca</p>
     <label>
         <input name="secondNum" type="text">
     </label><br/>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Kreiraj tablicu">
 
 </form>
 
@@ -27,3 +36,5 @@
     print_r($_POST['secondNum']);
     ?>
 </p>
+</body>
+</html>
