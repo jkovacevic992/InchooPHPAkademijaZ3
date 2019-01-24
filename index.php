@@ -65,7 +65,7 @@ function createMatrix($x, $y, &$matrix, &$cssClass)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homework 3</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="inputWord">
