@@ -43,17 +43,19 @@ input[type=submit] {
 }
 
 .input {
-    padding-left: 2.5em;
+
     display: inline-block;
     vertical-align: top;
     padding-top: 2em;
+    padding-left: 0;
 
 }
 
 .output {
-    padding-left: 2.5em;
+    padding-left: 0;
     display: inline-block;
     padding-top: 2em;
+
 
 }
 
@@ -61,6 +63,7 @@ input[type=submit] {
     display: inline-block;
     vertical-align: top;
     padding-top: 1.5em;
+    padding-right: 0;
 
 }
 
@@ -68,6 +71,8 @@ input[type=submit] {
     display: inline-block;
     vertical-align: top;
     padding-top: 2em;
+    margin-right: 0;
+    padding-right: 0;
 }
 
 table {
