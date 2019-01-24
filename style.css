@@ -72,9 +72,10 @@ input[type=submit] {
 
 table {
 
-
+    font-family: sans-serif;
     border-spacing: 0;
     font-weight: bold;
+
 
 }
 
@@ -87,10 +88,12 @@ th, td {
     width: 4em;
     position: relative;
 
+
 }
 
 .firstCell {
-    background-color: #58585A;
+    background-color: dimgrey;
+    color: darkgrey;
     z-index: 2;
 
 }
@@ -98,7 +101,7 @@ th, td {
 
 .left:before, .down:before, .right:before, .up:before {
     font-size: 0.7em;
-    color: #8D9B77;
+    color: #7AB139;
     position: absolute;
     z-index: 1;
 }

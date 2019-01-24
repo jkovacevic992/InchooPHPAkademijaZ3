@@ -78,11 +78,11 @@ function createMatrix($x, $y, &$matrix, &$cssClass)
     <form method="post">
         <p class="redovi">Broj redaka</p>
         <label>
-            <input name="firstNum" type="text">
+            <input name="firstNum" type="text" value='<?php echo $_POST['firstNum']; ?>'>
         </label><br/>
         <p>Broj stupaca</p>
         <label>
-            <input name="secondNum" type="text">
+            <input name="secondNum" type="text" value='<?php echo $_POST['secondNum']; ?>'>
         </label><br/>
         <input type="submit" value="KREIRAJ TABLICU">
 
